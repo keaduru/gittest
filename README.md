@@ -249,3 +249,36 @@ git log --graph      # Grafik görünüm
 - **İleri Git Teknikleri** - .gitignore, stash, revert
 
 **💡 Şu Ana Kadar Mükemmelsin!** Artık temel Git workflow'unu biliyorsun ve güvenle branch'lerle çalışabilirsin!
+
+---
+
+## 🌐 Bölüm 3: GitHub İşlemleri
+
+### Adım 6: GitHub Repository Oluşturma
+**🎯 Hedef:** Local Git repo'muzu GitHub'a bağlayacağız!
+
+**📋 Yapılacaklar:**
+1. GitHub'da yeni repository oluştur
+2. Local repo'yu GitHub'a bağla (`git remote add`)
+3. İlk push yap (`git push`)
+4. Değişiklikleri çek (`git pull`)
+
+### GitHub Repository Oluşturma Adımları:
+1. **GitHub.com**'a git → Sign in
+2. **"New Repository"** butonuna tıkla (yeşil buton)
+3. **Repository name:** `gittest` (veya istediğin isim)
+4. **Description:** "Git öğrenmek için test repository'si"
+5. **Public** seç (herkes görebilsin)
+6. ❌ **"Add a README file" tikini KALDIR** (bizde zaten var!)
+7. ❌ **".gitignore" ve "license" eklemeyecek**
+8. **"Create repository"** butonuna tıkla
+
+**🎯 Repository oluşturulduktan sonra GitHub sana şu komutları gösterecek:**
+
+```bash
+git remote add origin https://github.com/USERNAME/gittest.git
+git branch -M main
+git push -u origin main
+```
+
+**🤔 Bu komutlar ne demek? Hemen açıklayayım! 👇**

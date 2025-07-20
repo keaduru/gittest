@@ -23,12 +23,77 @@ Bu repo Git'i öğrenmek için oluşturulmuştur.
 - [x] `git fetch vs git pull` - Fark öğrenildi ✅ BONUS!
 - [x] `git conflict` - Çakışma çözme ✅ TEORİ TAMAMLANDI!
 
-### 4. İleri Seviye (Daha Sonra)
+### 4. İleri Seviye (Şimdi Öğreniyoruz!) 🔥
 - [ ] `.gitignore` - Dosyaları görmezden gelme
 - [ ] `git stash` - Değişiklikleri geçici saklama
 - [ ] `git revert` - Commit'i geri alma
 
 ---
+
+## 🔥 Bölüm 4: İleri Seviye Git Teknikleri
+
+### Adım 8: .gitignore - Dosyaları Görmezden Gelme
+**🎯 Hedef:** Git'in bazı dosyaları takip etmemesini sağlamak!
+
+**🤔 Neden .gitignore lazım?**
+- **node_modules/** klasörü → Çok büyük, gerek yok
+- **.env** dosyası → Şifreler var, güvenlik riski
+- **.DS_Store** → Mac'in yarattığı gereksiz dosyalar
+- **log** dosyaları → Geçici, sürekli değişir
+
+**💻 Pratik Yapalım:**
+
+1. **Tehlikeli dosyalar oluşturduk:**
+   - `.env` → Şifreler ve API anahtarları
+   - `node_modules/` → Büyük bağımlılık klasörü  
+   - `app.log` → Geçici log dosyası
+
+2. **Git status kontrolü:**
+```bash
+git status
+# Untracked files:
+#   .env
+#   app.log  
+#   node_modules/
+```
+
+3. **.gitignore dosyası oluşturduk:**
+```gitignore
+# Çevre değişkenleri ve şifreler
+.env
+.env.local
+.env.production
+
+# Node.js bağımlılıkları
+node_modules/
+npm-debug.log*
+
+# Log dosyaları
+*.log
+logs/
+```
+
+4. **Git status tekrar:**
+```bash
+git status
+# Sadece .gitignore görünüyor! ✨
+```
+
+**🎯 .gitignore Başarılı!**
+- ✅ Şifreler artık Git'te gözükmüyor
+- ✅ Büyük klasörler ignore edildi
+- ✅ Log dosyaları otomatik kalanacak
+- ✅ Repository temiz ve güvenli!
+
+**💡 .gitignore Kalıpları:**
+- `*.log` → Tüm .log dosyaları
+- `node_modules/` → Tüm klasör ve içeriği
+- `.env*` → .env ile başlayan tüm dosyalar
+- `!important.log` → Bu dosyayı ignore etme (istisna)
+
+---
+
+### Adım 9: Git Stash - Değişiklikleri Geçici Saklama
 
 ## 📝 Adım Adım Notlar
 

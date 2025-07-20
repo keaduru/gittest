@@ -1,0 +1,31 @@
+# Git Ignore Dosyası 🔒
+# Bu dosya Git'e hangi dosyaları görmezden geleceğini söyler
+
+# Çevre değişkenleri ve şifreler
+.env
+.env.local  
+.env.production
+
+# Node.js bağımlılıkları
+node_modules/
+npm-debug.log*
+
+# Log dosyaları
+*.log
+logs/
+
+# Mac sistem dosyaları
+.DS_Store
+.DS_Store?
+
+# Windows sistem dosyaları
+Thumbs.db
+desktop.ini
+
+# VS Code ayarları (opsiyonel)
+.vscode/
+
+# Geçici dosyalar
+tmp/
+temp/
+*.tmp

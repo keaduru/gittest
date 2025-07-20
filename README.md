@@ -12,9 +12,9 @@ Bu repo Git'i öğrenmek için oluşturulmuştur.
 - [x] `git log` - Geçmişi görme ✅ TAMAMLANDI!
 
 ### 2. Branch İşlemleri
-- [ ] `git branch` - Dal oluşturma
-- [ ] `git checkout` - Dal değiştirme
-- [ ] `git merge` - Dalları birleştirme
+- [x] `git branch` - Dal oluşturma ✅ TAMAMLANDI!
+- [x] `git checkout` - Dal değiştirme ✅ TAMAMLANDI!
+- [x] `git merge` - Dalları birleştirme ✅ TAMAMLANDI!
 
 ### 3. GitHub İşlemleri
 - [ ] `git remote add` - Uzak repo bağlama
@@ -232,19 +232,20 @@ git log --graph      # Grafik görünüm
 
 ---
 
-## 🎊 TEBRİKLER! Temel Git'i Öğrendin!
+## 🎊 TEBRİKLER! Git Temellerini ve Branch'leri Öğrendin!
 
-**✅ Ne Öğrendik:**
+**✅ Tamamladıklarımız:**
 1. **git init** - Repository başlattık
 2. **git status** - Durumu kontrol ettik  
 3. **git add** - Dosyaları sahnelettik
 4. **git commit** - Değişiklikleri kaydettik
 5. **git log** - Geçmişi gördük
+6. **git branch** - Branch oluşturduk
+7. **git checkout** - Branch değiştirdik
+8. **git merge** - Branch'leri birleştirdik
 
-**🚀 Sırada Ne Var?**
-Artık temel Git workflow'unu biliyorsun! Sırada:
-- Branch'ler (dallanma)
-- GitHub'a gönderme
-- Daha ileri Git teknikleri
+**🚀 Henüz Öğreneceğimiz:**
+- **GitHub İşlemleri** - Bulutta paylaşım
+- **İleri Git Teknikleri** - .gitignore, stash, revert
 
-**💡 Bonus:** VS Code Git rehberi için harika bir temel attık!
+**💡 Şu Ana Kadar Mükemmelsin!** Artık temel Git workflow'unu biliyorsun ve güvenle branch'lerle çalışabilirsin!

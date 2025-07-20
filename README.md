@@ -8,8 +8,8 @@ Bu repo Git'i öğrenmek için oluşturulmuştur.
 - [x] `git init` - Repo başlatma ✅ TAMAMLANDI!
 - [x] `git status` - Durum kontrolü ✅ TAMAMLANDI!
 - [x] `git add` - Dosyaları hazırlama ✅ TAMAMLANDI!
-- [ ] `git commit` - Değişiklikleri kaydetme
-- [ ] `git log` - Geçmişi görme
+- [x] `git commit` - Değişiklikleri kaydetme ✅ TAMAMLANDI!
+- [x] `git log` - Geçmişi görme ✅ TAMAMLANDI!
 
 ### 2. Branch İşlemleri
 - [ ] `git branch` - Dal oluşturma
@@ -156,3 +156,95 @@ Her iki dosya da artık commit için hazır (yeşil)!
 ---
 
 ### Sıradaki Adım: İlk Commit! 🚀
+
+### Adım 4: Git Commit - Değişiklikleri Kaydetme
+```bash
+git commit -m "İlk commit: README ve test dosyaları eklendi"
+```
+**Açıklama:** Staged dosyaları kalıcı olarak Git geçmişine kaydeder.
+
+**🎯 Git Commit Başarılı!**
+```
+[main (root-commit) 18bb47c] İlk commit: README ve test dosyaları eklendi
+ 2 files changed, 167 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 test.text
+```
+
+**🔍 Çıktı Analizi:**
+- `[main (root-commit) 18bb47c]` = Ana branch, ilk commit, ID: 18bb47c
+- `2 files changed` = 2 dosya değişti  
+- `167 insertions(+)` = 167 satır eklendi
+- `create mode 100644` = Yeni dosyalar oluşturuldu
+
+**💡 Commit ID Nedir?**
+- Her commit'in benzersiz kimliği
+- `18bb47c` = Bu commit'i ayırt etmek için
+- Git bu sayede hangi değişikliği takip ediyor
+
+**🏠 Nereye Kaydediliyor?**
+- **Lokal .git klasörüne** (kendi bilgisayarında)
+- GitHub'a göndermeye gerek yok
+- İnternet olmasa da çalışır!
+
+**🎨 Commit Mesajı İpuçları:**
+- Kısa ve açık ol: "Ne yaptığını" yaz
+- Türkçe veya İngilizce farketmez
+- Örnek: "Navbar eklendi", "Bug düzeltildi"
+
+---
+
+### Sıradaki Adım: Commit Geçmişini Görelim! 📚
+
+### Adım 5: Git Log - Commit Geçmişini Görme
+```bash
+git log
+```
+**Açıklama:** Tüm commit'lerin geçmişini gösterir.
+
+**🎯 Git Log Başarılı!**
+```
+commit 18bb47ca4aac4279b5ed3d2618c441f1119afe97 (HEAD -> main)
+Author: Kenan <kea.aksoy@gmail.com>
+Date:   Mon Jul 21 01:11:32 2025 +0300
+
+    İlk commit: README ve test dosyaları eklendi
+```
+
+**🔍 Çıktı Analizi:**
+- `commit 18bb47ca4aac...` = Tam commit ID (benzersiz kimlik)
+- `(HEAD -> main)` = Şu anda main branch'desin, HEAD burada
+- `Author: Kenan` = Kim yaptı (Git config'inden)
+- `Date: Mon Jul 21 01:11:32 2025` = Ne zaman yapıldı
+- `İlk commit: README ve test dosyaları eklendi` = Commit mesajı
+
+**💡 Önemli Kavramlar:**
+- **HEAD** = "Şu anda neredesin?" işaretçisi
+- **main** = Ana branch (varsayılan)
+- **Commit ID** = Her commit'in parmak izi gibi
+
+**🎨 Git Log Varyasyonları:**
+```bash
+git log --oneline    # Tek satırda özet
+git log -3           # Son 3 commit
+git log --graph      # Grafik görünüm
+```
+
+---
+
+## 🎊 TEBRİKLER! Temel Git'i Öğrendin!
+
+**✅ Ne Öğrendik:**
+1. **git init** - Repository başlattık
+2. **git status** - Durumu kontrol ettik  
+3. **git add** - Dosyaları sahnelettik
+4. **git commit** - Değişiklikleri kaydettik
+5. **git log** - Geçmişi gördük
+
+**🚀 Sırada Ne Var?**
+Artık temel Git workflow'unu biliyorsun! Sırada:
+- Branch'ler (dallanma)
+- GitHub'a gönderme
+- Daha ileri Git teknikleri
+
+**💡 Bonus:** VS Code Git rehberi için harika bir temel attık!

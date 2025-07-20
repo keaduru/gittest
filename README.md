@@ -23,16 +23,143 @@ Bu repo Git'i öğrenmek için oluşturulmuştur.
 - [x] `git fetch vs git pull` - Fark öğrenildi ✅ BONUS!
 - [x] `git conflict` - Çakışma çözme ✅ TEORİ TAMAMLANDI!
 
-### 4. İleri Seviye (Şimdi Öğreniyoruz!) 🔥
-- [ ] `.gitignore` - Dosyaları görmezden gelme
-- [ ] `git stash` - Değişiklikleri geçici saklama
-- [ ] `git revert` - Commit'i geri alma
+### 4. İleri Seviye (Tamamlandı!) 🎊
+- [x] `.gitignore` - Dosyaları görmezden gelme ✅ TAMAMLANDI!
+- [x] `git stash` - Değişiklikleri geçici saklama ✅ TAMAMLANDI!
+- [x] `git revert` - Commit'i geri alma ✅ TAMAMLANDI!
+
+---
+
+## 🔥 Bölüm 1: Temel Git Komutları
+
+### Git Nedir?
+**🎯 Git** = Kod değişikliklerini takip eden sistem (Version Control)
+
+**🤔 Neden Git kullanırız?**
+- **Geri alma** → Hatalı kodları kolayca geri al
+- **Geçmiş takibi** → Kim ne zaman ne değiştirmiş görebilirsin
+- **Takım çalışması** → Aynı projede birlikte çalışın
+- **Güvenlik** → Kodun yedekleri GitHub'da güvende
+
+**📝 Temel Git Döngüsü:**
+```
+Kod Yaz → git add → git commit → git push (GitHub'a)
+```
+
+**💻 Pratik Git Komutları:**
+```bash
+git init          # Repository başlat
+git status        # Durumu kontrol et
+git add dosya     # Dosyayı stage'e ekle
+git commit -m     # Değişiklikleri kaydet  
+git log           # Geçmişi görüntüle
+```
+
+**🎯 Bu bölümde öğrendiklerin:**
+- ✅ `git init` ile repository başlatma
+- ✅ `git status` ile durum kontrolü
+- ✅ `git add` ile staging area
+- ✅ `git commit` ile kalıcı kayıt
+- ✅ `git log` ile geçmiş görüntüleme
+
+**💡 Temel workflow'u öğrendin! Artık branch'lere geçebiliriz! 🚀**
+
+---
+
+## 🔥 Bölüm 2: Branch İşlemleri
+
+### Git Branch Nedir?
+**🌳 Branch (Dal)** = Kod geliştirmede paralel çalışma imkanı!
+
+**🤔 Neden Branch kullanırız?**
+- **Ana kod güvenli kalır** → main branch bozulmaz
+- **Paralel geliştirme** → herkes kendi dalında çalışır  
+- **Deneysel özellikler** → test etmek için güvenli
+- **Takım çalışması** → conflict'ler azalır
+
+**📝 Temel Branch Komutları:**
+```bash
+git branch                    # Mevcut branch'leri listele
+git branch yeni-branch        # Yeni branch oluştur
+git checkout yeni-branch      # Branch'e geç
+git checkout -b yeni-branch   # Oluştur ve geç (kısayol)
+git merge yeni-branch         # Branch'i birleştir
+git branch -d yeni-branch     # Branch'i sil
+```
+
+**💻 Branch Pratiği:**
+```bash
+# 1. Yeni feature branch oluştur
+git branch yeni-ozellik
+git checkout yeni-ozellik
+
+# 2. Değişiklik yap ve commit et
+echo "Yeni özellik kodu" > ozellik.js  
+git add ozellik.js
+git commit -m "Yeni özellik eklendi"
+
+# 3. Ana branch'e dön
+git checkout main
+
+# 4. Branch'i birleştir
+git merge yeni-ozellik
+
+# 5. Artık gereksiz branch'i sil
+git branch -d yeni-ozellik
+```
+
+**🎯 Branch Workflow Başarılı!**
+- ✅ Ana kod hiç bozulmadı
+- ✅ Yeni özellik güvenle eklendi  
+- ✅ Branch temizlendi
+- ✅ Professional çalışma tarzı! 🚀
+
+---
+
+## 🔥 Bölüm 3: GitHub İşlemleri
+
+### VS Code ile GitHub Entegrasyonu ✅
+
+**🎯 Sen VS Code ile GitHub'a bağlandın! Tebrikler!**
+
+**📍 VS Code Source Control Yöntemi:**
+1. **Sol panelde Source Control** (Ctrl+Shift+G)
+2. **"Publish to GitHub"** butonu
+3. Repository adı → `gittest`  
+4. **Public/Private** seçimi
+5. **"Publish"** → ✨ İşlem tamamlandı!
+
+**🎯 Artık yapabileceklerin:**
+- **Commit** → VS Code'da değişiklikleri kaydet
+- **Sync/Push** → GitHub'a gönder
+- **Pull** → GitHub'dan al
+- **Branch** → VS Code'da branch oluştur/değiştir
+
+**💡 VS Code GitHub Avantajları:**
+- 🚀 **Tek tık** ile GitHub'a publish
+- 🔗 **Otomatik** remote bağlantısı  
+- 📤 **Görsel** push/pull işlemleri
+- 🔐 **Otomatik** GitHub authentication
+- ⚡ **En kolay** yöntem yeni başlayanlar için!
+
+**🔄 Git Pull Pratiği:**
+GitHub'da test.text dosyasını düzenledin ve "Git pull test için değişiklik" ekledin. Sonra terminal'de:
+
+```bash
+git pull
+# Fast-forward merge başarılı! ✅
+```
+
+**💡 Git Pull = Fetch + Merge:**
+- **Fetch:** GitHub'daki değişiklikleri kontrol et
+- **Merge:** Local dosyalara uygula
+- **Sonuç:** Senkronize repository! 🎯
 
 ---
 
 ## 🔥 Bölüm 4: İleri Seviye Git Teknikleri
 
-### Adım 8: .gitignore - Dosyaları Görmezden Gelme
+### Adım 1: .gitignore - Dosyaları Görmezden Gelme
 **🎯 Hedef:** Git'in bazı dosyaları takip etmemesini sağlamak!
 
 **🤔 Neden .gitignore lazım?**
@@ -93,40 +220,212 @@ git status
 
 ---
 
-### Adım 9: Git Stash - Değişiklikleri Geçici Saklama
+### Adım 2: Git Stash - Değişiklikleri Geçici Saklama
 
-## 📝 Adım Adım Notlar
+**🎯 Git Stash Nedir?**
+Git Stash, yarım kalmış değişiklikleri geçici olarak saklamanızı sağlar. Acil başka bir branch'e geçmeniz gerektiğinde veya değişiklikleri commit etmeye hazır olmadığınızda çok faydalıdır.
 
-### Adım 1: Git Repository Başlatma
+**📝 Temel Git Stash Komutları:**
 ```bash
-git init
-```
-**Açıklama:** Bu komut mevcut klasörü Git repository'si haline getirir.
-
-**Ne olur:**
-- `.git` adında gizli bir klasör oluşturulur
-- Bu klasör Git'in tüm verilerini saklar
-- Artık Git komutları çalışmaya başlar
-
-**Örnek:**
-```bash
-cd /Users/kenanaksoy/Desktop/codebase/gittest
-git init
-```
-**Çıktı:** "Initialized empty Git repository in /Users/.../gittest/.git/"
-
-**💡 İpucu:** Bir klasörde sadece 1 kez `git init` yapılır!
-
-**🎯 VS Code İpucu:** VS Code'da terminal açtığında otomatik olarak workspace klasöründe açılır. `cd` ile uğraşmana gerek yok!
-
-**Kontrol komutu:**
-```bash
-pwd  # Hangi klasördesin gösterir
-ls -la  # .git klasörünü görmek için
+git stash                    # Mevcut değişiklikleri stash'e kaydet
+git stash save "mesaj"       # Mesajlı stash kaydetme
+git stash list               # Kayıtlı stash'leri listele
+git stash pop                # Son stash'i geri getir ve listeden sil
+git stash apply              # Son stash'i geri getir ama listeden silme
+git stash drop               # Belirli stash'i sil
+git stash clear              # Tüm stash'leri temizle
 ```
 
-### 🎯 Git Init Başarılı!
-**Tebrikler!** Git repository'nizi başarıyla oluşturdunuz. Artık `.git` klasörü mevcut ve Git komutları çalışacak.
+**💻 Pratik Yapalım:**
+
+1. **Yarım kalmış değişiklik oluşturduk:**
+```bash
+echo "Bu değişiklik yarım kaldı..." > test.txt
+git status
+# Modified files görünüyor
+```
+
+2. **Değişiklikleri stash'e kaydettik:**
+```bash
+git add .
+git stash save "Yarım kalmış test değişiklikleri"
+# Working directory temizlendi!
+```
+
+3. **Stash listesini kontrol ettik:**
+```bash
+git stash list
+# stash@{0}: On main: Yarım kalmış test değişiklikleri
+```
+
+4. **Stash'i geri getirdik:**
+```bash
+git stash pop
+# Değişiklikler geri geldi, stash listesi temizlendi
+```
+
+**🎯 Git Stash Başarılı!**
+- ✅ Yarım kalmış değişiklikleri güvenle sakladık
+- ✅ Working directory temizledik
+- ✅ İhtiyaç anında değişiklikleri geri getirdik
+- ✅ Stash mesajlarıyla organizasyon sağladık
+
+**💡 Stash Kullanım Senaryoları:**
+- Acil bug fix için başka branch'e geçmek
+- Pull yapmadan önce local değişiklikleri saklamak
+- Deneysel kod parçalarını geçici kaydetmek
+- Commit etmeye hazır olmayan değişiklikleri korumak
+
+---
+
+### Adım 3: Git Revert - Güvenli Geri Alma
+
+**🎯 Git Revert Nedir?**
+Git Revert, hatalı commit'leri güvenle geri almanın en iyi yoludur. Commit history'sini bozmaz, sadece yeni bir "ters commit" oluşturur.
+
+**🤔 Git Reset vs Git Revert:**
+- **git reset** → Commit'leri siler (TEHLİKELİ!)
+- **git revert** → Yeni commit ile geri alır (GÜVENLİ!)
+
+**📝 Temel Git Revert Komutları:**
+```bash
+git revert HEAD                    # Son commit'i geri al
+git revert <commit-hash>           # Belirli commit'i geri al
+git revert --no-edit HEAD          # Otomatik commit mesajı
+git revert -n HEAD                 # Sadece stage'e ekle, commit etme
+```
+
+**💻 Pratik Yapalım:**
+
+1. **Hatalı commit oluşturduk:**
+```bash
+# Hatalı kod dosyası oluşturduk
+echo 'console.log("Bug var!");' > hatali-kod.js
+git add hatali-kod.js
+git commit -m "HATA: Buglu kod eklendi"
+```
+
+2. **Git log ile commit'i bulduk:**
+```bash
+git log --oneline
+# abc123 HATA: Buglu kod eklendi  ← Bu commit'i geri alacağız!
+# def456 Normal commit
+```
+
+3. **Git revert ile güvenle geri aldık:**
+```bash
+git revert HEAD
+# VS Code açılır, commit mesajını düzenle
+# "Revert 'HATA: Buglu kod eklendi'"
+```
+
+4. **Sonuç kontrol:**
+```bash
+git log --oneline
+# xyz789 Revert "HATA: Buglu kod eklendi"
+# abc123 HATA: Buglu kod eklendi
+# def456 Normal commit
+
+ls  # hatali-kod.js artık yok!
+```
+
+**🎯 Git Revert Başarılı!**
+- ✅ Hatalı commit güvenle geri alındı
+- ✅ Commit history bozulmadı
+- ✅ Takım üyeleri etkilenmedi
+- ✅ GitHub'a güvenle push edilebilir
+
+**💡 Revert Kullanım Senaryoları:**
+- Production'da bug çıkaran commit'i geri alma
+- Feature branch'de hatalı merge'i düzeltme
+- Takım çalışmasında güvenli geri alma
+- GitHub'da public repository'de düzeltme
+
+**🔥 Pro İpucu:**
+- Revert sonrası yeni bir commit oluşur
+- History temiz kalır, herkes görebilir
+- Revert'i de revert edebilirsin (geri getirme)
+- Team lead'lerin favori komutu! 🎯
+
+---
+
+## 🎊 TEBRIKLER! GIT USTASI OLDIN! 🎊
+
+**✅ TAMAMLADIKLARIMIZ:**
+
+### 1. Temel Git Komutları ✅
+- [x] `git init` - Repo başlatma ✅
+- [x] `git status` - Durum kontrolü ✅  
+- [x] `git add` - Dosyaları hazırlama ✅
+- [x] `git commit` - Değişiklikleri kaydetme ✅
+- [x] `git log` - Geçmişi görme ✅
+
+### 2. Branch İşlemleri ✅
+- [x] `git branch` - Dal oluşturma ✅
+- [x] `git checkout` - Dal değiştirme ✅
+- [x] `git merge` - Dalları birleştirme ✅
+
+### 3. GitHub İşlemleri ✅
+- [x] `git remote add` - Uzak repo bağlama ✅ 
+- [x] `git push` - GitHub'a gönderme ✅
+- [x] `git pull` - Değişiklikleri alma ✅
+- [x] `git fetch vs git pull` - Fark öğrenildi ✅
+- [x] `git conflict` - Çakışma çözme ✅
+
+### 4. İleri Seviye Teknikleri ✅
+- [x] `.gitignore` - Dosyaları görmezden gelme ✅
+- [x] `git stash` - Değişiklikleri geçici saklama ✅
+- [x] `git revert` - Commit'i güvenli geri alma ✅
+
+**🏆 SEN ARTIK GIT USTASISIN!**
+
+**💪 Neler Yapabilirsin:**
+- ✨ Güvenle kod geliştirme ve commit etme
+- 🌳 Branch'lerle paralel çalışma
+- 🤝 GitHub ile takım çalışması
+- 🛡️ .gitignore ile güvenlik
+- 💾 Stash ile geçici kayıtlar
+- 🔄 Revert ile güvenli geri alma
+- 🚀 Production'a hazır Git workflow!
+
+**🎯 Sıradaki Adımların:**
+1. **Kendi projende uygula** - En iyi öğrenme yöntemi!
+2. **Takım çalışması yap** - Conflict'ler çöz
+3. **Advanced Git** öğren - rebase, cherry-pick, hooks
+4. **GitHub Actions** - Otomatik deployment
+5. **Git Flow** - Professional workflow patterns
+
+**📚 Bu README'yi sakla!** Referans olarak sürekli kullanabilirsin.
+
+**💡 Unutma:** En iyi Git uzmanları bile sürekli öğrenmeye devam eder. Sen de harikasın! 🌟
+
+---
+
+---
+
+## 🎊 TEBRIKLER! GIT USTASI OLDIN! 🎊
+
+**🏆 SEN ARTIK GIT USTASISIN!**
+
+**💪 Neler Yapabilirsin:**
+- ✨ Güvenle kod geliştirme ve commit etme
+- 🌳 Branch'lerle paralel çalışma
+- 🤝 GitHub ile takım çalışması
+- 🛡️ .gitignore ile güvenlik
+- 💾 Stash ile geçici kayıtlar
+- 🔄 Revert ile güvenli geri alma
+- 🚀 Production'a hazır Git workflow!
+
+**🎯 Sıradaki Adımların:**
+1. **Kendi projende uygula** - En iyi öğrenme yöntemi!
+2. **Takım çalışması yap** - Conflict'ler çöz
+3. **Advanced Git** öğren - rebase, cherry-pick, hooks
+4. **GitHub Actions** - Otomatik deployment
+5. **Git Flow** - Professional workflow patterns
+
+**📚 Bu README'yi sakla!** Referans olarak sürekli kullanabilirsin.
+
+**💡 Unutma:** En iyi Git uzmanları bile sürekli öğrenmeye devam eder. Sen de harikasın! 🌟
 
 ---
 

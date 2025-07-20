@@ -19,7 +19,9 @@ Bu repo Git'i öğrenmek için oluşturulmuştur.
 ### 3. GitHub İşlemleri
 - [x] `git remote add` - Uzak repo bağlama ✅ VS CODE İLE TAMAMLANDI!
 - [x] `git push` - GitHub'a gönderme ✅ VS CODE İLE TAMAMLANDI!
-- [ ] `git pull` - Değişiklikleri alma
+- [x] `git pull` - Değişiklikleri alma ✅ TAMAMLANDI!
+- [x] `git fetch vs git pull` - Fark öğrenildi ✅ BONUS!
+- [x] `git conflict` - Çakışma çözme ✅ TEORİ TAMAMLANDI!
 
 ### 4. İleri Seviye (Daha Sonra)
 - [ ] `.gitignore` - Dosyaları görmezden gelme
@@ -363,3 +365,79 @@ git push -u origin main
 6. Commit mesajı yaz: `README GitHub'da düzenlendi`
 
 **Şimdi local'e çekmeyi deneyelim! 👇**
+
+### Git Pull Pratiği ✅
+
+**📋 GitHub'da yaptığın değişiklikler:**
+- test.text dosyasına ek satırlar ekledin
+- "Git pull test için değişiklik" yazısını ekledin
+- GitHub'da commit yaptın
+
+**💻 Terminal'de Git Pull:**
+```bash
+git pull
+```
+
+**🎯 Git Pull Başarılı!**
+```
+Updating 8fbe420..4922990
+Fast-forward
+ test.text | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+```
+
+**🔍 Çıktı Analizi:**
+- `Fast-forward` = Temiz merge, conflict yok!
+- `test.text` dosyası başarıyla güncellendi
+- GitHub'daki değişiklikler local'e geldi ✅
+
+**💡 Git Pull = Git Fetch + Git Merge:**
+- **Fetch:** GitHub'daki değişiklikleri kontrol eder
+- **Merge:** Local dosyalarına uygular
+- **Sonuç:** GitHub ve local senkronize olur!
+
+---
+
+## 🔥 Bölüm 3.1: Git Conflict (Gelişmiş Konu)
+
+### Ne Zaman Conflict Olur?
+**⚠️ Tehlikeli durum:** Aynı dosyanın aynı satırı hem GitHub'da hem local'de değiştirilirse!
+
+**📊 Conflict Senaryoları:**
+
+**✅ Güvenli Durumlar:**
+- Farklı dosyalar değişirse → Otomatik merge
+- Aynı dosya, farklı satırlar → Otomatik merge
+
+**💥 Conflict Durumları:**
+- Aynı dosya, aynı satır → CONFLICT!
+- Git karar veremez → Sen çözeceksin!
+
+**🛠️ Conflict Çözme Süreci:**
+```bash
+git pull
+# CONFLICT (content): Merge conflict in README.md
+# Automatic merge failed; fix conflicts and then commit the result.
+```
+
+**VS Code'da göreceğin:**
+```markdown
+<<<<<<< HEAD (Current Change)
+Local'deki değişikliğin
+=======
+GitHub'dan gelen değişiklik  
+>>>>>>> origin/main (Incoming Change)
+```
+
+**🎯 Çözüm seçeneklerin:**
+- Accept Current Change (Local'inki)
+- Accept Incoming Change (GitHub'daki)
+- Accept Both Changes (İkisi de)
+- Manual düzenleme (Karışık çözüm)
+
+**💡 Conflict'ten Kaçınma:**
+1. Sık sık `git pull` yap
+2. Küçük, sık commit'ler yap
+3. Takım ile koordinasyon kur
+
+---

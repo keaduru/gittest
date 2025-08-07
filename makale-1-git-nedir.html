@@ -1,0 +1,491 @@
+# Git Dojo'ya Hoş Geldiniz - Git Nedir ve Neden Önemli?
+
+<!-- Bu HTML içeriği doğrudan summernote editöre kopyalanabilir -->
+
+<div class="dojo-intro">
+<h2>🥋 Git Dojo'ya Hoş Geldiniz, Genç Padawan!</h2>
+
+<p><strong>"Bin kilometrelik yolculuk tek adımla başlar"</strong> - Laozi</p>
+
+<p>Bugün Git Dojo'muzun kapılarını açıyoruz! Bu dojo'da sadece kod yazmayı değil, kod ustası olmayı öğreneceksiniz. İlk dersimiz Git ile tanışmak. Hazır mısınız?</p>
+</div>
+
+<div class="sensei-quote">
+<h3>🎯 Git Sensei'nin İlk Dersi</h3>
+<p><em>"Git, geliştiricinin samurai kılıcıdır. Doğru kullanıldığında sizi usta yapar, yanlış kullanıldığında... eğitim fırsatına dönüşür!"</em></p>
+</div>
+
+<h2>🤔 Git Nedir? Hikayeyi Baştan Anlatalım</h2>
+
+<p>2005 yılında, <strong>Linus Torvalds</strong> (evet, Linux'un yaratıcısı!) bir problemle karşılaştı. Linux kernel geliştirme ekibi büyümüştü ve kod değişikliklerini takip etmek kabus haline gelmişti.</p>
+
+<blockquote class="dojo-story">
+<p><strong>💡 Gerçek Hikaye:</strong> Linus, mevcut version kontrol sistemlerinden öyle sıkıldı ki, "Ben daha iyisini yapacağım!" dedi ve sadece <strong>2 hafta</strong>da Git'in temellerini yazdı. İşte bu gerçek bir usta hareketi!</p>
+</blockquote>
+
+<h3>🎯 Git Kelimesinin Anlamı</h3>
+
+<p><strong>"Git"</strong> aslında İngilizce argo bir kelime! Linus Torvalds'ın kendisi şöyle açıklıyor:</p>
+
+<blockquote class="git-etymology">
+<p><em>"Ben her projemi kendi adımla adlandırırım, önce Linux, şimdi Git. Git, İngilizce'de 'aptal, sinir bozucu kişi' anlamına gelir. Ama aynı zamanda 'Global Information Tracker' (Küresel Bilgi Takipçisi) kısaltması da olabilir!"</em> - Linus Torvalds</p>
+</blockquote>
+
+<h3>🎯 Version Control Nedir?</h3>
+
+<p><strong>Version Control (Sürüm Kontrolü)</strong>, dosyalarınızın zaman içindeki değişikliklerini takip eden, yöneten ve koordine eden sistemdir.</p>
+
+<p>Basitçe anlatmak gerekirse:</p>
+
+<ul>
+<li><strong>Zamanda yolculuk makinesi</strong> - Kodunuzun geçmişine gidebilirsiniz</li>
+<li><strong>Güvenlik ağı</strong> - Bir şeyler bozulursa geri alabilirsiniz</li>
+<li><strong>İş birliği aracı</strong> - Takım olarak çalışabilirsiniz</li>
+<li><strong>Değişiklik takipçisi</strong> - Kim ne yaptı, ne zaman yaptı görebilirsiniz</li>
+<li><strong>Yedekleme sistemi</strong> - Kodunuz kaybolmaz, her zaman güvende</li>
+<li><strong>Deneme laboratorı</strong> - Yeni özellikler test edebilir, istediğiniz zaman geri dönebilirsiniz</li>
+</ul>
+
+<div class="detailed-explanation">
+<h4>📚 Daha Detaylı Açıklama</h4>
+<p>Version Control, yazılım geliştirmede <strong>en temel araçlardan biri</strong>dir. Düşünün ki:</p>
+<ul>
+<li>Bir Word belgesi yazıyorsunuz ve sürekli "belge_son.docx", "belge_gercek_son.docx", "belge_final.docx" gibi dosyalar oluşturuyorsunuz</li>
+<li>Version Control tam da bu karmaşayı bitirir!</li>
+<li>Tek bir dosya, ama tüm geçmiş versiyonlarına erişim</li>
+<li>Her değişiklik kim tarafından, ne zaman yapıldı bilgisi</li>
+</ul>
+</div>
+
+<div class="dojo-practice">
+<h3>🔥 Dojo Analojisi</h3>
+<p>Git'i <strong>fotoğraf albümü</strong> gibi düşünün:</p>
+<ul>
+<li>Her commit = Bir fotoğraf</li>
+<li>Repository = Fotoğraf albümü</li>
+<li>Branch = Farklı tema albümler</li>
+<li>Merge = Albümleri birleştirmek</li>
+</ul>
+</div>
+
+<h2>⚔️ Git vs Diğerleri: Neden Git Kazandı?</h2>
+
+<table class="comparison-table">
+<thead>
+<tr>
+<th>Özellik</th>
+<th>Git</th>
+<th>SVN</th>
+<th>CVS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hız</strong></td>
+<td>⚡ Çok Hızlı</td>
+<td>🐌 Yavaş</td>
+<td>🐌 Çok Yavaş</td>
+</tr>
+<tr>
+<td><strong>Offline Çalışma</strong></td>
+<td>✅ Evet</td>
+<td>❌ Hayır</td>
+<td>❌ Hayır</td>
+</tr>
+<tr>
+<td><strong>Branch'leme</strong></td>
+<td>🚀 Mükemmel</td>
+<td>😐 Orta</td>
+<td>😰 Zor</td>
+</tr>
+<tr>
+<td><strong>Popülerlik</strong></td>
+<td>👑 Kral</td>
+<td>📉 Azalıyor</td>
+<td>☠️ Ölü</td>
+</tr>
+</tbody>
+</table>
+
+<div class="sensei-tip">
+<h3>💡 Sensei İpucu</h3>
+<p><strong>Git neden bu kadar popüler?</strong> Çünkü geliştiricilere <em>özgürlük</em> verir. İnternet bağlantınız yoksa bile çalışabilir, hızlıdır ve her türlü projeye uyum sağlar.</p>
+</div>
+
+<h2>🚀 Modern Yazılımda Git'in Yeri</h2>
+
+<p>Bugün tech dünyasında Git kullanmamak, <strong>samurai olmayıp kılıç taşımaya</strong> benzer:</p>
+
+<div class="stats-grid">
+<div class="stat-item">
+<h4>📊 %95+</h4>
+<p>Profesyonel projelerde Git kullanımı</p>
+</div>
+<div class="stat-item">
+<h4>🏢 Fortune 500</h4>
+<p>şirketlerinin tamamı Git kullanıyor</p>
+</div>
+<div class="stat-item">
+<h4>👨‍💻 100M+</h4>
+<p>Geliştirici Git kullanıyor</p>
+</div>
+</div>
+
+<h3>🎯 Git Bilmezseniz Ne Olur?</h3>
+
+<ul class="danger-list">
+<li>❌ İş başvurularında elenirsiniz</li>
+<li>❌ Takım projelerinde zorlanırsınız</li>
+<li>❌ Open source projelere katkı yapamazsınız</li>
+<li>❌ Freelance işlerde dezavantajlı olursunuz</li>
+</ul>
+
+<div class="success-story">
+<h3>✅ Git Öğrendikten Sonra</h3>
+<ul>
+<li>🚀 Proje yönetimi süper kolay</li>
+<li>🤝 Takım çalışması sorunsuz</li>
+<li>💼 İş fırsatları kapınızı çalar</li>
+<li>🌟 Portfolio projelerinizi sergileyebilirsiniz</li>
+</ul>
+</div>
+
+<h2>💻 İlk Kurulum: Dojo'ya Giriş Hazırlığı</h2>
+
+<h3>🔧 Git Kurulumu</h3>
+
+<div class="platform-tabs">
+<h4>🍎 Mac İçin Kurulum</h4>
+<div class="code-block">
+<pre><code># Terminal'i açın (Cmd + Space → "Terminal")
+# Git kurulu mu kontrol edin
+git --version
+
+# Eğer kurulu değilse, Homebrew ile kurun
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install git
+
+# Veya Xcode Command Line Tools ile
+xcode-select --install</code></pre>
+</div>
+
+<h4>🪟 Windows İçin Kurulum</h4>
+<div class="code-block">
+<pre><code># Yöntem 1: Git for Windows (Önerilen)
+# https://git-scm.com/download/win adresinden indirin
+# Setup dosyasını çalıştırın, tüm varsayılan ayarları kabul edin
+
+# Yöntem 2: Chocolatey ile (eğer varsa)
+choco install git
+
+# Yöntem 3: Winget ile (Windows 10/11)
+winget install --id Git.Git -e --source winget
+
+# Kurulum kontrolü (Command Prompt veya PowerShell)
+git --version</code></pre>
+</div>
+
+<h4>🐧 Linux İçin Kurulum</h4>
+<div class="code-block">
+<pre><code># Ubuntu/Debian
+sudo apt update
+sudo apt install git
+
+# CentOS/RHEL/Fedora
+sudo yum install git
+# veya
+sudo dnf install git
+
+# Arch Linux
+sudo pacman -S git
+
+# Kurulum kontrolü
+git --version</code></pre>
+</div>
+</div>
+
+<div class="pro-tip">
+<h4>💡 Hangi Yöntemi Seçmeliyim?</h4>
+<ul>
+<li><strong>Mac:</strong> Homebrew öneriyoruz (paket yönetimi için ideal)</li>
+<li><strong>Windows:</strong> Git for Windows (Git Bash dahil gelir)</li>
+<li><strong>Linux:</strong> Dağıtımınızın paket yöneticisi</li>
+</ul>
+</div>
+
+<h3>⚙️ İlk Konfigürasyon</h3>
+
+<div class="code-block">
+<pre><code># Adınızı ve email'inizi ayarlayın
+git config --global user.name "Adınız Soyadınız"
+git config --global user.email "email@adresiniz.com"
+
+# Kontrol edin
+git config --list</code></pre>
+</div>
+
+<div class="warning-box">
+<h3>⚠️ Dojo Kuralı #1</h3>
+<p><strong>Gerçek adınızı ve email'inizi kullanın!</strong> Bu bilgiler her commit'te görünür ve profesyonel kimliğinizi yansıtır.</p>
+</div>
+
+<h2>🎯 İlk Dersin Özeti</h2>
+
+<p>Bugün Git Dojo'ya ilk adımınızı attınız! Öğrendikleriniz:</p>
+
+<div class="summary-box">
+<ul>
+<li>✅ Git'in hikayesi ve önemi</li>
+<li>✅ Version Control konsepti</li>
+<li>✅ Git'in rakiplerine üstünlüğü</li>
+<li>✅ Modern yazılımda Git'in yeri</li>
+<li>✅ İlk kurulum ve konfigürasyon</li>
+</ul>
+</div>
+
+<div class="next-lesson">
+<h3>🔥 Sıradaki Ders: "Git Dojo Dersi #1: Temel Komutlarla İlk Adımlar"</h3>
+<p>Bir sonraki dersimizde <code>git init</code>, <code>git add</code>, <code>git commit</code> komutlarıyla ilk repository'nizi oluşturacağız!</p>
+</div>
+
+<div class="dojo-homework">
+<h3>🏠 Dojo Ödevi</h3>
+<p>Bir sonraki derse kadar:</p>
+<ol>
+<li>Git kurulumunu tamamlayın</li>
+<li>Konfigürasyonunuzu ayarlayın</li>
+<li>Terminal'de <code>git --version</code> komutunu çalıştırın</li>
+<li>Sonucu yorumlarda paylaşın! 💬</li>
+</ol>
+</div>
+
+<div class="sensei-farewell">
+<h3>🥋 Git Sensei'den</h3>
+<p><em>"Unutmayın, ustalaşmanın sırrı sürekli pratik yapmaktır. Her gün biraz Git, sizi bir adım daha öteye taşır. Görüşmek üzere, genç savaşçı!"</em></p>
+</div>
+
+<hr>
+
+<div class="article-footer">
+<p><strong>Bu makale serisini beğendiyseniz:</strong></p>
+<ul>
+<li>📧 Email listemize katılın - Git ipuçları direkt gelen kutunuzda</li>
+<li>🔔 Blog güncellemelerini takip edin</li>
+<li>💬 Yorumlarda deneyimlerinizi paylaşın</li>
+<li>🚀 Sosyal medyada arkadaşlarınızla paylaşın</li>
+</ul>
+</div>
+
+<!-- CSS Stilleri (Summernote'da kullanmak için) -->
+<style>
+.dojo-intro {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.sensei-quote {
+    background: #f8f9fa;
+    border-left: 4px solid #28a745;
+    padding: 15px;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+.dojo-story {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.dojo-practice {
+    background: #e7f3ff;
+    border: 2px solid #007bff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.sensei-tip {
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.comparison-table th,
+.comparison-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.comparison-table th {
+    background: #f8f9fa;
+}
+
+.code-block {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.code-block pre {
+    margin: 0;
+    font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.warning-box {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.summary-box {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.next-lesson {
+    background: #ffeaa7;
+    border: 2px solid #fdcb6e;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.dojo-homework {
+    background: #74b9ff;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.sensei-farewell {
+    background: #fd79a8;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+.article-footer {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.danger-list li {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.success-story ul li {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.git-etymology {
+    background: #e8f4fd;
+    border: 1px solid #b6e3ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+.detailed-explanation {
+    background: #f8f9fa;
+    border: 2px solid #6c757d;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.platform-tabs {
+    margin: 20px 0;
+}
+
+.platform-tabs h4 {
+    background: #495057;
+    color: white;
+    padding: 10px 15px;
+    margin: 10px 0 0 0;
+    border-radius: 8px 8px 0 0;
+}
+
+.pro-tip {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Git Dojo’ya Hoş Geldiniz - Git Nedir ve Neden Önemli?",
+  "author": {
+    "@type": "Person",
+    "name": "Aykan Sekon",
+    "url": "https://logoritmik.com"
+  },
+  "datePublished": "2025-08-07T00:00:00+03:00",
+  "dateModified": "2025-08-07T00:00:00+03:00",
+  "image": "https://logoritmik.com/blog/assets/images/posts/postid_79_002.png",
+  "url": "https://logoritmik.com/blog/post/79",
+  "publisher": {
+    "@type": "Organization",
+    "name": "logoritmik.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://logoritmik.com/assets/img/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://logoritmik.com/blog/post/79"
+  },
+  "description": "Git Dojo serisinin ilk dersinde Git'in tarihçesinden kurulumuna kadar tüm temel bilgiler bir sensei üslubuyla anlatılıyor. Başlangıç seviyesi için eğlenceli ve öğretici bir giriş."
+}
+</script>
+
+

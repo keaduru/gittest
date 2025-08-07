@@ -1,0 +1,996 @@
+# Git Dojo Dersi #1: Temel Komutlarla İlk Adımlar
+
+<!-- Bu HTML içeriği doğrudan summernote editöre kopyalanabilir -->
+
+<div class="dojo-intro">
+<h2>🥋 Git Dojo Dersi #1: İlk Adımlarınızı Atın!</h2>
+
+<p><strong>"Ustalar da bir zamanlar çıraktı"</strong> - Anonim</p>
+
+<p>Hoş geldiniz geri, genç savaşçı! İlk dersimizde Git'in ne olduğunu öğrendik. Şimdi gerçek eğlence başlıyor - ilk Git komutlarınızı öğrenip kendi elinizle repository oluşturacaksınız!</p>
+</div>
+
+<div class="sensei-quote">
+<h3>🎯 Git Sensei'nin Ikinci Dersi</h3>
+<p><em>"Bin sayfalık kitap okumak, bir satır kod yazmaktan daha az öğretir. Bugün ellerinizi kirletme zamanı!"</em></p>
+</div>
+
+<h2>🧠 Önce Git'in Beynini Anlayalım</h2>
+
+<p>Komutlara geçmeden önce Git'in nasıl çalıştığını anlayalım. Git bir <strong>"zaman makinesi"</strong> gibi düşünebilirsiniz!</p>
+
+<div class="git-concept">
+<h3>📸 Git'in 3 Temel Kavramı</h3>
+
+<div class="concept-grid">
+<div class="concept-item">
+<h4>🏠 Working Directory (Çalışma Alanı)</h4>
+<p>Dosyalarınızı düzenlediğiniz yer. Bilgisayarınızdaki normal klasör.</p>
+</div>
+<div class="concept-item">
+<h4>🎭 Staging Area (Sahne Alanı)</h4>
+<p>Commit'e hazırlanan dosyaların bekle alanı. "Fotoğraf çekilmeyi bekleyen" alan.</p>
+</div>
+<div class="concept-item">
+<h4>📚 Repository (Depo)</h4>
+<p>Tüm commit'lerin saklandığı yer. Git'in "fotoğraf albümü".</p>
+</div>
+</div>
+</div>
+
+<div class="git-workflow-visual">
+<h3>🔄 Git'in Çalışma Döngüsü</h3>
+<div class="workflow-diagram">
+<p><strong>1.</strong> Dosyayı düzenle → <strong>Working Directory</strong></p>
+<p><strong>2.</strong> <code>git add</code> → <strong>Staging Area</strong></p>
+<p><strong>3.</strong> <code>git commit</code> → <strong>Repository</strong></p>
+</div>
+
+<div class="analogy-simple">
+<h4>🎭 Basit Analoji:</h4>
+<ul>
+<li>📝 <strong>Çalışma Alanı</strong> = Yazı masanız</li>
+<li>🎪 <strong>Staging Area</strong> = Fotoğraf için poz verme alanı</li>
+<li>📸 <strong>Repository</strong> = Çekilen fotoğraflar albümü</li>
+</ul>
+</div>
+</div>
+
+<h2>💡 Commit Nedir? - Sihirli Fotoğraf Makinesi</h2>
+
+<div class="commit-explanation">
+<p><strong>Commit</strong>, dosyalarınızın o anki halinin "fotoğrafını çekmek" gibidir. Her commit:</p>
+
+<div class="commit-features">
+<ul>
+<li>📅 <strong>Zaman damgası</strong> - Ne zaman yapıldı?</li>
+<li>👤 <strong>Yazar bilgisi</strong> - Kim yaptı?</li>
+<li>📝 <strong>Açıklama mesajı</strong> - Ne değişti?</li>
+<li>🔗 <strong>Benzersiz ID</strong> - Her commit'in parmak izi</li>
+<li>📋 <strong>Dosya değişiklikleri</strong> - Hangi satırlar eklendi/silindi?</li>
+</ul>
+</div>
+
+<div class="commit-analogy">
+<h4>🎯 Commit Analojisi:</h4>
+<p>Commit yapmak <strong>oyun kaydetmek</strong> gibidir. Oyunda zorlu bir seviyeyi geçtikten sonra kayıt ederseniz, hata yapsanız o noktaya geri dönebilirsiniz!</p>
+</div>
+</div>
+
+<h2>🎯 Bu Derste Öğreneceğiniz 5 Temel Komut</h2>
+
+<div class="lesson-overview">
+<div class="command-grid">
+<div class="command-item">
+<h4>🚀 git init</h4>
+<p>Repository başlatma</p>
+</div>
+<div class="command-item">
+<h4>👀 git status</h4>
+<p>Durum kontrolü</p>
+</div>
+<div class="command-item">
+<h4>➕ git add</h4>
+<p>Dosyaları hazırlama</p>
+</div>
+<div class="command-item">
+<h4>💾 git commit</h4>
+<p>Değişiklikleri kaydetme</p>
+</div>
+<div class="command-item">
+<h4>📚 git log</h4>
+<p>Geçmişi görüntüleme</p>
+</div>
+</div>
+</div>
+
+<h2>🏗️ Pratik Proje: "Benim İlk Git Projesi"</h2>
+
+<p>Teoriden sıkıldınız mı? Harika! Çünkü şimdi gerçek bir proje ile öğreneceğiz. <strong>"benim-blog"</strong> adında basit bir web sitesi projesi oluşturacağız.</p>
+
+<div class="project-setup">
+<h3>📁 Proje Klasörü Oluşturma</h3>
+<div class="code-block">
+<pre><code># Desktop'ta çalışma klasörümüzü oluşturalım
+cd Desktop
+mkdir benim-blog
+cd benim-blog
+
+# Klasörün içinde olduğumuzu kontrol edelim
+pwd</code></pre>
+</div>
+</div>
+
+<h2>🚀 Komut #1: git init - Repository Doğuşu</h2>
+
+<p><strong>git init</strong> komutu, sıradan bir klasörü Git repository'sine dönüştürür. Bu, Git'in "Bu klasörü takip etmeye başlıyorum!" demesidir.</p>
+
+<div class="dojo-practice">
+<h3>🔥 Dojo Pratiği: İlk Repository</h3>
+<div class="code-block">
+<pre><code># Repository'yi başlatalım!
+git init
+
+# Ne oldu bakalım?
+ls -la</code></pre>
+</div>
+
+<p><strong>Beklenen Çıktı:</strong></p>
+<div class="output-block">
+<pre><code>Initialized empty Git repository in /Users/kullaniciadi/Desktop/benim-blog/.git/</code></pre>
+</div>
+</div>
+
+<div class="sensei-tip">
+<h3>💡 Sensei İpucu</h3>
+<p><strong>.git klasörü</strong> görünmeyen sihirli klasördür! Git'in tüm verileri burada saklanır. Bu klasörü silmeyin - bütün Git geçmişiniz gider!</p>
+</div>
+
+<h3>🎭 Git Init Analojisi</h3>
+
+<div class="analogy-box">
+<p><strong>Git Init</strong> şuna benzer:</p>
+<ul>
+<li>📔 <strong>Boş defter almak</strong> - Henüz sayfa yok ama hazır</li>
+<li>🏠 <strong>Ev temeli atmak</strong> - Görünmeyen ama kritik</li>
+<li>📷 <strong>Kamera açmak</strong> - Artık fotoğraf çekmeye hazır</li>
+</ul>
+</div>
+
+<h2>👀 Komut #2: git status - Durumu Anlama</h2>
+
+<p><strong>git status</strong> Git'in "Ne durumda?" sorusuna verdiği cevaptır. En çok kullanacağınız komutlardan biri!</p>
+
+<div class="dojo-practice">
+<h3>🔥 Dojo Pratiği: İlk Status Kontrolü</h3>
+<div class="code-block">
+<pre><code># Durumu kontrol edelim
+git status</code></pre>
+</div>
+
+<p><strong>Beklenen Çıktı:</strong></p>
+<div class="output-block">
+<pre><code>On branch main
+No commits yet
+nothing to commit (create/copy files and use "git add" to track)</code></pre>
+</div>
+</div>
+
+<div class="status-explanation">
+<h3>📋 Status Çıktısını Çözümleme</h3>
+<ul>
+<li><strong>"On branch main"</strong> → Ana daldasınız (branch konusunu ileride göreceğiz)</li>
+<li><strong>"No commits yet"</strong> → Henüz hiç commit yapmamışsınız</li>
+<li><strong>"nothing to commit"</strong> → Henüz takip edilecek dosya yok</li>
+</ul>
+</div>
+
+<h2>📝 Dosya Oluşturalım - Aksiyona Geçelim!</h2>
+
+<p>Git'in takip edebileceği dosyalar oluşturalım:</p>
+
+<div class="code-block">
+<pre><code># Ana sayfa dosyamızı oluşturalım
+echo "&lt;h1&gt;Benim Blog Sitem&lt;/h1&gt;" &gt; index.html
+
+# Hakkımda sayfası
+echo "&lt;h2&gt;Hakkımda&lt;/h2&gt;&lt;p&gt;Ben bir Git öğrencisiyim!&lt;/p&gt;" &gt; hakkimda.html
+
+# README dosyası
+echo "# Benim Blog Projem
+Bu proje Git öğrenmek için oluşturuldu." &gt; README.md
+
+# Dosyaları kontrol edelim
+ls -la</code></pre>
+</div>
+
+<h2>👀 Komut #2 Tekrar: git status - Şimdi Ne Oldu?</h2>
+
+<div class="dojo-practice">
+<h3>🔥 Dojo Pratiği: Dosyalar Oluştuktan Sonra Status</h3>
+<div class="code-block">
+<pre><code># Şimdi status ne diyor?
+git status</code></pre>
+</div>
+
+<p><strong>Beklenen Çıktı:</strong></p>
+<div class="output-block">
+<pre><code>On branch main
+No commits yet
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	README.md
+	hakkimda.html
+	index.html
+
+nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+</div>
+</div>
+
+<div class="file-status-explanation">
+<h3>🔍 Dosya Durumları</h3>
+<div class="status-types">
+<div class="status-item untracked">
+<h4>🔴 Untracked (İzlenmiyor)</h4>
+<p>Git bu dosyaları tanımıyor. "Bunları takip etmemi istiyor musun?" diyor.</p>
+</div>
+<div class="status-item staged">
+<h4>🟢 Staged (Hazırlanmış)</h4>
+<p>Commit için hazır dosyalar. "Bunları kaydetmeye hazırım!" diyor.</p>
+</div>
+<div class="status-item modified">
+<h4>🟡 Modified (Değiştirilmiş)</h4>
+<p>Daha önce commit edilmiş ama sonra değiştirilmiş dosyalar.</p>
+</div>
+</div>
+</div>
+
+<h2>➕ Komut #3: git add - Dosyaları Sahneye Çıkarma</h2>
+
+<p><strong>git add</strong> komutu dosyaları "staging area"ya (sahne alanı) ekler. Bu, Git'e "Bu dosyaları commit'e hazırla" demektir.</p>
+
+<div class="dojo-practice">
+<h3>🔥 Dojo Pratiği: Dosyaları Tek Tek Ekleme</h3>
+<div class="code-block">
+<pre><code># İlk dosyayı ekleyelim
+git add index.html
+
+# Status kontrolü
+git status</code></pre>
+</div>
+
+<p><strong>Beklenen Çıktı:</strong></p>
+<div class="output-block">
+<pre><code>On branch main
+No commits yet
+Changes to be committed:
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+	new file:   index.html
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	README.md
+	hakkimda.html</code></pre>
+</div>
+</div>
+
+<div class="staging-analogy">
+<h3>🎭 Staging Area Analojisi</h3>
+<p><strong>Staging Area</strong> tiyatro sahnesine benzer:</p>
+<ul>
+<li>🎪 <strong>Kuliste bekleyenler</strong> → Untracked files</li>
+<li>🎭 <strong>Sahnedekiler</strong> → Staged files (git add ile)</li>
+<li>📸 <strong>Fotoğraf çekilenler</strong> → Committed files</li>
+</ul>
+</div>
+
+<h3>⚡ Git Add Varyasyonları</h3>
+
+<div class="git-add-variations">
+<div class="code-block">
+<pre><code># Tüm dosyaları bir anda eklemek
+git add .
+
+# Veya tümünü eklemek için
+git add --all
+
+# Belirli uzantıdaki dosyaları eklemek
+git add *.html
+
+# Diğer dosyalarımızı da ekleyelim
+git add README.md hakkimda.html
+
+# Final kontrol
+git status</code></pre>
+</div>
+</div>
+
+<div class="warning-box">
+<h3>⚠️ Dojo Kuralı #2</h3>
+<p><strong>git add . kullanırken dikkatli olun!</strong> Bu komut mevcut klasördeki TÜM dosyaları ekler. Bazen istemediğiniz dosyalar da eklenebilir.</p>
+</div>
+
+<h2>💾 Komut #4: git commit - Tarihe Geçme Anı</h2>
+
+<p><strong>git commit</strong> staged dosyaları kalıcı olarak Git geçmişine kaydeder. Bu, "Fotoğraf çek!" anıdır.</p>
+
+<div class="dojo-practice">
+<h3>🔥 Dojo Pratiği: İlk Commit</h3>
+<div class="code-block">
+<pre><code># İlk commit'imizi yapalım!
+git commit -m "İlk commit: Blog sitesi temel dosyaları eklendi"
+
+# Alternatif olarak daha kısa
+git commit -m "feat: ilk dosyalar eklendi"</code></pre>
+</div>
+
+<p><strong>Beklenen Çıktı:</strong></p>
+<div class="output-block">
+<pre><code>[main (root-commit) a1b2c3d] İlk commit: Blog sitesi temel dosyaları eklendi
+ 3 files changed, 4 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 hakkimda.html
+ create mode 100644 index.html</code></pre>
+</div>
+</div>
+
+<div class="commit-message-guide">
+<h3>📝 İyi Commit Mesajı Yazma Kılavuzu</h3>
+
+<div class="good-bad-examples">
+<div class="good-example">
+<h4>✅ İyi Örnekler</h4>
+<ul>
+<li><code>"feat: kullanıcı giriş sistemi eklendi"</code></li>
+<li><code>"fix: navbar responsive sorunu çözüldü"</code></li>
+<li><code>"docs: README dosyası güncellendi"</code></li>
+<li><code>"style: CSS formatlaması düzeltildi"</code></li>
+</ul>
+</div>
+
+<div class="bad-example">
+<h4>❌ Kötü Örnekler</h4>
+<ul>
+<li><code>"değişiklik"</code></li>
+<li><code>"düzeltme"</code></li>
+<li><code>"asd"</code></li>
+<li><code>"test"</code></li>
+</ul>
+</div>
+</div>
+</div>
+
+<h3>🔄 Commit Yapmayı Unuttuysanız Ne Olur?</h3>
+
+<div class="sensei-tip">
+<h3>💡 Sensei İpucu</h3>
+<p><strong>Commit yapmayı unutmak</strong> çok normal! Dosyalarınız kaybolmaz, sadece Git geçmişinde yer almazlar. Istediğiniz zaman commit yapabilirsiniz.</p>
+</div>
+
+<h2>📚 Komut #5: git log - Geçmişe Yolculuk</h2>
+
+<p><strong>git log</strong> commit geçmişinizi gösterir. Git'in "fotoğraf albümü"dür.</p>
+
+<div class="dojo-practice">
+<h3>🔥 Dojo Pratiği: Geçmiş Görüntüleme</h3>
+<div class="code-block">
+<pre><code># Standart log
+git log
+
+# Daha kısa ve güzel görünüm
+git log --oneline
+
+# Grafik görünüm (ileride branch'lerle kullanışlı)
+git log --oneline --graph
+
+# Son 3 commit'i göster
+git log --oneline -3</code></pre>
+</div>
+
+<p><strong>Beklenen Çıktı (git log):</strong></p>
+<div class="output-block">
+<pre><code>commit a1b2c3d4e5f6... (HEAD -&gt; main)
+Author: Adınız &lt;email@adresiniz.com&gt;
+Date:   Wed Aug 7 14:30:25 2025 +0300
+
+    İlk commit: Blog sitesi temel dosyaları eklendi</code></pre>
+</div>
+</div>
+
+<div class="log-explanation">
+<h3>🔍 Git Log Çıktısını Anlama</h3>
+<ul>
+<li><strong>commit a1b2c3d...</strong> → Benzersiz commit ID (parmak izi)</li>
+<li><strong>(HEAD → main)</strong> → Şu anda buradayız</li>
+<li><strong>Author</strong> → Kim yaptı</li>
+<li><strong>Date</strong> → Ne zaman yapıldı</li>
+<li><strong>Mesaj</strong> → Ne yapıldığını açıklama</li>
+</ul>
+</div>
+
+<h2>🔄 Tam Workflow: Yeni Değişiklik Yapalım</h2>
+
+<p>Şimdi tüm komutları birlikte kullanarak yeni bir değişiklik yapalım:</p>
+
+<div class="full-workflow">
+<h3>🎯 Senaryo: CSS Dosyası Ekleme</h3>
+
+<div class="code-block">
+<pre><code># 1. Yeni dosya oluştur
+echo "body { font-family: Arial; }" &gt; style.css
+
+# 2. Durumu kontrol et
+git status
+
+# 3. Dosyayı sahneye ekle
+git add style.css
+
+# 4. Tekrar kontrol et
+git status
+
+# 5. Commit yap
+git commit -m "style: temel CSS dosyası eklendi"
+
+# 6. Geçmişi görüntüle
+git log --oneline</code></pre>
+</div>
+
+<div class="workflow-steps">
+<h4>🔄 Standard Git Workflow</h4>
+<ol>
+<li>🔧 <strong>Değişiklik yap</strong> (dosya oluştur/düzenle)</li>
+<li>👀 <strong>git status</strong> (durumu kontrol et)</li>
+<li>➕ <strong>git add</strong> (dosyaları sahneye ekle)</li>
+<li>👀 <strong>git status</strong> (tekrar kontrol et)</li>
+<li>💾 <strong>git commit</strong> (kalıcı kaydet)</li>
+<li>📚 <strong>git log</strong> (geçmişi görüntüle)</li>
+</ol>
+</div>
+</div>
+
+<h2>🚨 Sık Yapılan Hatalar ve Çözümleri</h2>
+
+<div class="common-mistakes">
+<div class="mistake-item">
+<h3>❌ Hata #1: Commit mesajı yazmayı unutma</h3>
+<div class="code-block">
+<pre><code># Yanlış (mesaj yok)
+git commit
+
+# Doğru
+git commit -m "açıklama buraya"</code></pre>
+</div>
+</div>
+
+<div class="mistake-item">
+<h3>❌ Hata #2: git add yapmayı unutma</h3>
+<div class="code-block">
+<pre><code># Dosya değiştirdim ama commit yapmıyor
+git commit -m "değişiklik"
+# → "nothing to commit" hatası
+
+# Çözüm: Önce add, sonra commit
+git add dosya-adi.txt
+git commit -m "değişiklik"</code></pre>
+</div>
+</div>
+
+<div class="mistake-item">
+<h3>❌ Hata #3: Yanlış klasörde git init</h3>
+<div class="code-block">
+<pre><code># Desktop'ta git init yaptım, tüm Desktop takip ediliyor!
+# Çözüm: .git klasörünü sil
+rm -rf .git</code></pre>
+</div>
+</div>
+</div>
+
+<h2>🎯 Ders Özeti ve Başarılarınız</h2>
+
+<div class="lesson-summary">
+<h3>🏆 Bugün Neler Başardınız?</h3>
+<ul>
+<li>✅ İlk Git repository'nizi oluşturdunuz (<code>git init</code>)</li>
+<li>✅ Dosya durumlarını öğrendiniz (<code>git status</code>)</li>
+<li>✅ Dosyaları commit için hazırladınız (<code>git add</code>)</li>
+<li>✅ İlk commit'inizi yaptınız (<code>git commit</code>)</li>
+<li>✅ Commit geçmişini görüntülediniz (<code>git log</code>)</li>
+<li>✅ Standard Git workflow'unu öğrendiniz</li>
+</ul>
+</div>
+
+<div class="command-cheatsheet">
+<h3>📋 Bugünkü Komutlar - Hızlı Referans</h3>
+<table class="cheat-table">
+<thead>
+<tr>
+<th>Komut</th>
+<th>Ne Yapar</th>
+<th>Örnek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git init</code></td>
+<td>Repository başlatır</td>
+<td><code>git init</code></td>
+</tr>
+<tr>
+<td><code>git status</code></td>
+<td>Durum gösterir</td>
+<td><code>git status</code></td>
+</tr>
+<tr>
+<td><code>git add</code></td>
+<td>Dosya sahneye ekler</td>
+<td><code>git add index.html</code></td>
+</tr>
+<tr>
+<td><code>git commit</code></td>
+<td>Değişiklikleri kaydeder</td>
+<td><code>git commit -m "mesaj"</code></td>
+</tr>
+<tr>
+<td><code>git log</code></td>
+<td>Geçmişi gösterir</td>
+<td><code>git log --oneline</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="next-lesson">
+<h3>🔥 Sıradaki Ders: "Git Dojo Dersi #2: Branch'ler - Paralel Evrenler Yaratma"</h3>
+<p>Bir sonraki dersimizde <strong>branch</strong> kavramını öğreneceğiz! Paralel evrenler yaratıp, güvenle deneyim yapabilmeyi göreceğiz. Feature geliştirme, hotfix yapma gibi gerçek hayat senaryolarını pratik edeceğiz!</p>
+</div>
+
+<div class="dojo-homework">
+<h3>🏠 Dojo Ödevi</h3>
+<p>Bir sonraki derse kadar:</p>
+<ol>
+<li><strong>Kendi projenizi oluşturun</strong> - Farklı bir klasörde git init yapın</li>
+<li><strong>3 dosya oluşturun</strong> - HTML, CSS ve README</li>
+<li><strong>2 ayrı commit yapın</strong> - İlk commit'te HTML, ikinci commit'te CSS</li>
+<li><strong>git log --oneline</strong> çıktınızı yorumlarda paylaşın! 💬</li>
+<li><strong>Bonus:</strong> Farklı commit mesajları deneyin</li>
+</ol>
+</div>
+
+<div class="practice-challenge">
+<h3>💪 Ekstra Pratik Challenge</h3>
+<p><strong>"To-Do List Projesi"</strong> oluşturun:</p>
+<ul>
+<li>📄 <code>todo.html</code> - Basit HTML yapısı</li>
+<li>🎨 <code>todo.css</code> - Basit stil</li>
+<li>⚡ <code>todo.js</code> - "console.log('Merhaba Git!')"</li>
+<li>📋 Her dosya için ayrı commit</li>
+<li>🏆 En az 3 commit yapın</li>
+</ul>
+</div>
+
+<div class="sensei-farewell">
+<h3>🥋 Git Sensei'den</h3>
+<p><em>"Tebrikler! Artık Git'in temel komutlarını biliyorsunuz. Unutmayın, ustalaşmanın sırrı tekrardır. Bu komutları günlük rutin haline getirin. Bir sonraki derste paralel evrenler yaratacağız!"</em></p>
+</div>
+
+<hr>
+
+<div class="article-footer">
+<p><strong>Bu makaleyi faydalı buldunuz mu?</strong></p>
+<ul>
+<li>💬 <strong>Yorumlarda</strong> hangi komutun en çok işinize yaradığını paylaşın</li>
+<li>📸 <strong>git log --oneline</strong> çıktınızın ekran görüntüsünü paylaşın</li>
+<li>🚀 <strong>Sosyal medyada</strong> arkadaşlarınızla paylaşın</li>
+<li>⭐ <strong>Favori</strong> olarak işaretleyin - referans olarak kullanın!</li>
+</ul>
+</div>
+
+<!-- CSS Stilleri (Summernote'da kullanmak için) -->
+<style>
+.dojo-intro {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.sensei-quote {
+    background: #f8f9fa;
+    border-left: 4px solid #28a745;
+    padding: 15px;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+.git-concept {
+    background: #e8f4fd;
+    border: 2px solid #007bff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.concept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.concept-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #17a2b8;
+}
+
+.concept-item h4 {
+    color: #17a2b8;
+    margin-bottom: 10px;
+}
+
+.git-workflow-visual {
+    background: #f0f8f0;
+    border: 2px solid #28a745;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.workflow-diagram {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.workflow-diagram p {
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.analogy-simple {
+    background: #fff3cd;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.commit-explanation {
+    background: #e8d5ff;
+    border: 2px solid #6f42c1;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.commit-features {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.commit-analogy {
+    background: #d1ecf1;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.lesson-overview {
+    background: #e8f4fd;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.command-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.command-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #007bff;
+}
+
+.command-item h4 {
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.project-setup {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.dojo-practice {
+    background: #e7f3ff;
+    border: 2px solid #007bff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.code-block {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.code-block pre {
+    margin: 0;
+    font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.output-block {
+    background: #1e1e1e;
+    color: #00ff00;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px 0;
+    font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.sensei-tip {
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.analogy-box {
+    background: #f0f8f0;
+    border: 2px solid #28a745;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.status-explanation {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.file-status-explanation {
+    margin: 20px 0;
+}
+
+.status-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.status-item {
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid;
+}
+
+.status-item.untracked {
+    background: #f8d7da;
+    border-color: #dc3545;
+}
+
+.status-item.staged {
+    background: #d4edda;
+    border-color: #28a745;
+}
+
+.status-item.modified {
+    background: #fff3cd;
+    border-color: #ffc107;
+}
+
+.staging-analogy {
+    background: #e8d5ff;
+    border: 2px solid #6f42c1;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.git-add-variations {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.warning-box {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.commit-message-guide {
+    background: #f8f9fa;
+    border: 2px solid #6c757d;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.good-bad-examples {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.good-example {
+    background: #d4edda;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.bad-example {
+    background: #f8d7da;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.log-explanation {
+    background: #e8f4fd;
+    border: 1px solid #b6e3ff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.full-workflow {
+    background: #f0f8f0;
+    border: 2px solid #28a745;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.workflow-steps {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.common-mistakes {
+    background: #fff5f5;
+    border: 2px solid #e53e3e;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.mistake-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.lesson-summary {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.command-cheatsheet {
+    background: #f8f9fa;
+    border: 2px solid #6c757d;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.cheat-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.cheat-table th,
+.cheat-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.cheat-table th {
+    background: #f8f9fa;
+}
+
+.next-lesson {
+    background: #ffeaa7;
+    border: 2px solid #fdcb6e;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.dojo-homework {
+    background: #74b9ff;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.practice-challenge {
+    background: #ff7675;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.sensei-farewell {
+    background: #fd79a8;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+.article-footer {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Git Dojo Dersi #1: Temel Komutlarla İlk Adımlar",
+  "author": {
+    "@type": "Person",
+    "name": "Aykan Sekon",
+    "url": "https://logoritmik.com"
+  },
+  "datePublished": "2025-08-07T00:00:00+03:00",
+  "dateModified": "2025-08-07T00:00:00+03:00",
+  "image": "https://logoritmik.com/blog/assets/images/posts/postid_80_001.png",
+  "url": "https://logoritmik.com/blog/post/80",
+  "publisher": {
+    "@type": "Organization",
+    "name": "logoritmik.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://logoritmik.com/assets/img/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://logoritmik.com/blog/post/80"
+  },
+  "description": "Git Dojo serisinin ikinci dersinde temel Git komutlarını öğreniyoruz. git init, add, commit, status ve log komutlarını pratik yaparak ustalaşın!"
+}
+</script>
